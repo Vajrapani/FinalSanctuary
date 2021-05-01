@@ -1,0 +1,16 @@
+<h1 class="mt-4">User Adoption List</h1>
+<p class="lead mb-3">This is the adoption request list, where you may view the progress of your adoption requests!</p>
+  <a href="/home" class="btn btn-primary btn-lg">User Home</a>
+
+<div>
+<h2><b>Your Adoption Requests</b></h2>
+<u1>
+  <% requestList.forEach(request => {%>
+    <div class="card card-body text-center">
+    <h3><u> <b> <%= request.animalname%> </b></u> </h3>
+    <p class="lead mb-3"> <b> Status :</b> <%= request.status %>   </p>
+    </div>
+  <%})%>
+</u1>
+</div>
+<a href="/users/logout" class="btn btn-primary">Logout</a>

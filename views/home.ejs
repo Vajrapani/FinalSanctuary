@@ -1,0 +1,33 @@
+<h1 class="mt-4">User Home</h1>
+<p class="lead mb-3">Welcome to the Sanctuary's Adoption Page, <%= user.name %></p>
+  <a href="/userAdoptionPage" class="btn btn-primary btn-lg">Your Adoption Requests</a>
+<div class="card card-body text-center">
+<%- include ("./partials/messages"); %>
+<div class="card card-body text-center">
+<form action="/users/home" method="POST">
+  <label for="name"> <h2> Choose an animal : </h2></label>
+  <div class="form-group">
+    <select name="name">
+        <% animalList.forEach(function(animal){ %>
+        <option value="<%= animal.name %>"><%= animal.name %></option>
+        <% }); %>
+    </select>
+  </div>
+
+<button name = "adoptbutton" value = "adopt" type="submit" class="btn btn-primary btn-lg">Request Adoption</button>
+</form>
+</div>
+<h2><b>List of Available Animals :</b></h2>
+<u1>
+  <% animalList.forEach(animal => {%>
+    <div class="card card-body text-center">
+    <h3><u> <b> <%= animal.name %> </b></u> </h3>
+    <p class="lead mb-3"> <b> Description : </b> <%= animal.description %>  </p>
+    <p class="lead mb-3"> <b> Birthday : </b> <%= animal.birthday %>   </p>
+    <p class="lead mb-3"> <b> Availability :  </b> <%= animal.availability %>   </p>
+    </div>
+  <%})%>
+</u1>
+</div>
+
+<a href="/users/logout" class="btn btn-primary">Logout</a>

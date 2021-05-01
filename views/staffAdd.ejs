@@ -1,0 +1,38 @@
+<h1 class="mt-4">Add Animal to Database</h1>
+<p class="lead mb-3">You may add any new additions to the Sanctuary on this page.</p>
+  <a href="/staffhome" class="btn btn-primary btn-lg">Staff Home</a>
+<div class="card card-body text-center">
+<form action="/users/staffAdd" method="POST">
+  <div class="form-group">
+    <label for="name" class="lead mb-3" >Animal Name</label>
+    <input
+      name="name"
+      class="form-control"
+      placeholder="Enter Animal Name"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="description" class="lead mb-3">Animal Description</label>
+    <input
+      name="description"
+      class="form-control"
+      placeholder="Enter Animal Description"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="birthday" class="lead mb-3">Animal Birthday</label>
+    <input
+      type="date"
+      name="birthday"
+      class="form-control"
+      placeholder="Enter Animal Birthday"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary btn-block">
+    Add Animal
+  </button>
+</form>
+</div>
+<a href="/users/logout" class="btn btn-primary">Logout</a>

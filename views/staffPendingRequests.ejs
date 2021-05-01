@@ -1,0 +1,42 @@
+<h1 class="mt-4">All Pending Requests</h1>
+<p class="lead mb-3">See all Pending Adoption Requests on this page, and choose to Approve or Deny specific requests.</p>
+  <a href="/staffhome" class="btn btn-primary btn-lg">Staff Home</a>
+
+<div class="card card-body text-center">
+  <form action="/users/staffPendingRequests" method="POST">
+  <label for="name"> <h2> Choose a User : </h2></label>
+  <div class="form-group">
+    <select name="username">
+        <% requestList.forEach(function(request){ %>
+        <option value="<%= request.requestee %>"><%= request.requestee %></option>
+        <% }); %>
+    </select>
+  </div>
+
+  <label for="name"> <h2> Choose an Animal: </h2></label>
+  <div class="form-group">
+    <select name="animalname">
+        <% requestList.forEach(function(request){ %>
+        <option value="<%= request.animalname %>"><%= request.animalname %></option>
+        <% }); %>
+    </select>
+  </div>
+  <button name = "action" value = "approve" type="submit" class="btn btn-primary btn-lg">Approve</button>
+  <button name = "action" value = "deny" type="submit" class="btn btn-primary btn-lg">Deny</button>
+</form>
+
+</div>
+
+<div>
+<h2><b>Requests</b></h2>
+<u1>
+  <% requestList.forEach(request => {%>
+    <div class="card card-body text-center">
+    <h3><u> <b> <%= request.requestee %> </b></u> </h3>
+    <p class="lead mb-3"> <b> Animal : </b> <%= request.animalname %>  </p>
+    <p class="lead mb-3"> <b> Status :</b> <%= request.status %>   </p>
+    </div>
+  <%})%>
+</u1>
+</div>
+<a href="/users/logout" class="btn btn-primary">Logout</a>

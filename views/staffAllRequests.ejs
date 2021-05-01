@@ -1,0 +1,17 @@
+<h1 class="mt-4">All Requests</h1>
+<p class="lead mb-3">See All Adoption Requests on the system.</p>
+  <a href="/staffhome" class="btn btn-primary btn-lg">Staff Home</a>
+
+<div>
+<h2><b>Requests</b></h2>
+<u1>
+  <% requestList.forEach(request => {%>
+    <div class="card card-body text-center">
+    <h3><u> <b> <%= request.requestee %> </b></u> </h3>
+    <p class="lead mb-3"> <b> Animal : </b> <%= request.animalname %>  </p>
+    <p class="lead mb-3"> <b> Status :</b> <%= request.status %>   </p>
+    </div>
+  <%})%>
+</u1>
+</div>
+<a href="/users/logout" class="btn btn-primary">Logout</a>

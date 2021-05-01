@@ -1,0 +1,20 @@
+<h1 class="mt-4">All Animals</h1>
+<p class="lead mb-3"> Here you may see a list of all animals, adopted or otherwise, in the system.</p>
+<a href="/staffhome" class="btn btn-primary btn-lg">Staff Home</a>
+
+
+<h2><b>List of Animals :</b></h2>
+<u1>
+  <% animalList.forEach(animal => {%>
+    <div class="card card-body text-center">
+    <h3><u> <b> <%= animal.name %> </b></u> </h3>
+    <p class="lead mb-3"> <b> Owner : </b> <%= animal.Owner %>  </p>
+    <p class="lead mb-3"> <b> Description : </b> <%= animal.description %>  </p>
+    <p class="lead mb-3"> <b> Birthday : </b> <%= animal.birthday %>   </p>
+    <p class="lead mb-3"> <b> Availability :  </b> <%= animal.availability %>   </p>
+    </div>
+  <%})%>
+</u1>
+</div>
+
+<a href="/users/logout" class="btn btn-primary">Logout</a>
